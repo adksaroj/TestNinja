@@ -18,55 +18,33 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
-        public void Add_WhenCalled_ReturnsSumOfTwoArguments()
+        [TestCase(5,7,12)]
+        public void Add_WhenCalled_ReturnsSumOfTwoArguments(int a, int b, int expectedResult)
         {
-            //Arrange
+            //Arrange - done at SetUp
             //var math = new Fundamentals.Math();
-            
+
             //Assert
-            var result = _math.Add(5,7);
+            var result = _math.Add(a,b);
             
             //Act
-            Assert.That(result, Is.EqualTo(5 + 7));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
-        public void Max_WhenFirstArgumentIsGreater_ReturnsTheFirstArgument()
+        [TestCase(5,7,7)]
+        [TestCase(7,5,7)]
+        [TestCase(3,3,3)]
+        public void Max_WhenCalled_ReturnsTheGreaterArgument(int a, int b, int expectedResult)
         {
-            //Arrange
+            //Arrange - done at SetUp
             //var math = new Fundamentals.Math();
-            
-            //Assert
-            var result = _math.Max(7, 5);
-            
-            //Act
-            Assert.That(result, Is.EqualTo(7));
-        }
 
-        [Test]
-        public void Max_WhenSecondArgumentIsGreater_ReturnsTheSecondArgument()
-        {
-            //Arrange
-            //var math = new Fundamentals.Math();
-            
             //Assert
-            var result = _math.Max(5, 8);
+            var result = _math.Max(a, b);
             
             //Act
-            Assert.That(result, Is.EqualTo(8));
-        }
-
-        [Test]
-        public void Max_WhenBothArgsEqual_ReturnsTheSameArgument()
-        {
-            //Arrange
-            //var math = new Fundamentals.Math();
-            
-            //Assert
-            var result = _math.Max(3, 3);
-            
-            //Act
-            Assert.That(result, Is.EqualTo(3));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }
