@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Linq;
 
 namespace TestNinja.UnitTests
 {
@@ -46,6 +47,25 @@ namespace TestNinja.UnitTests
             
             //Act
             Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        [TestCase(5)]
+        //[TestCase(-2)]
+        //[TestCase(6)]
+        //[TestCase(17)]
+        public void GetOddNumbers_WhenCalled_ReturnsCollectionOfOddNosLessThanEqualsLimit(int limit)
+        {
+            //Act
+            var results = _math.GetOddNumbers(limit);
+
+            //Assert
+            //Assert.That(results, Is.Not.Empty);
+            //Assert.That(results.Count(),Is.EqualTo(5));
+            //Assert.That(results, Is.Ordered);
+            //Assert.That(results, Is.Unique);
+
+            Assert.That(results, Is.EquivalentTo(new[] { 1,3,5}));
         }
     }
 }
