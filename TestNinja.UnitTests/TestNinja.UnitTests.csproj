@@ -57,6 +57,7 @@
     <Compile Include="ErrorLoggerTests.cs" />
     <Compile Include="Fundamentals\DemeritPointsCalculatorTests.cs" />
     <Compile Include="Fundamentals\FizzBuzzTests.cs" />
+    <Compile Include="Fundamentals\StackTests.cs" />
     <Compile Include="HtmlFormatterTests.cs" />
     <Compile Include="MathTests.cs" />
     <Compile Include="ReservationTests.cs" />
