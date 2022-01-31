@@ -19,6 +19,7 @@ namespace TestNinja.UnitTests
 
         [Test]
         [TestCase(5,7,12)]
+        //[Ignore("I wanted to")]
         public void Add_WhenCalled_ReturnsSumOfTwoArguments(int a, int b, int expectedResult)
         {
             //Arrange - done at SetUp
