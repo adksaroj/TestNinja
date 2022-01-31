@@ -11,13 +11,13 @@ namespace TestNinja.UnitTests
     [TestFixture()]
     public class FizzBuzzTests
     {
-        private FizzBuzz _fizzBuzz;
+        //private FizzBuzz _fizzBuzz;
 
-        [SetUp]
-        public void SetUpTests()
-        {
-            _fizzBuzz = new FizzBuzz();
-        }
+        //[SetUp]
+        //public void SetUpTests()
+        //{
+        //    _fizzBuzz = new FizzBuzz();
+        //}
 
         [Test()]
         [TestCase(7)]
