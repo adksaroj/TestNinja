@@ -40,5 +40,17 @@ namespace TestNinja.UnitTests
             Assert.That(()=> _errorLogger.Log(error),Throws.ArgumentNullException);
             //Assert.That(()=> _errorLogger.Log(error),Throws.Exception.TypeOf<ArgumentNullException>());
         }
+
+        [Test]
+        [TestCase("error")]
+        public void Log_ValidError_ShouldRaiseErrorLoggedEvent(string error)
+        {
+            var id = Guid.Empty;
+            _errorLogger.ErrorLogged += (sender, args) => { id = args; }; //Subscribe to event
+
+            _errorLogger.Log(error);
+
+            Assert.That(id, Is.Not.EqualTo(Guid.Empty));
+        }
     }
 }
